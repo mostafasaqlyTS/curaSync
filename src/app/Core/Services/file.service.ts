@@ -6,7 +6,6 @@ import {
   DeleteFileRequest,
   FileDownloadResponse
 } from '../Models/file/file.model';
-import { ChatbotImageResponse } from '../Models/chatbot/chatbot.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -26,24 +25,7 @@ export class FileService {
   }
 
 
-  uploadImageToChatbot(
-    image: File,
-    id_file: string,
-    text: string,
-    session_number: string,
-    token: string
-  ): Observable<ChatbotImageResponse> {
-    const formData = new FormData();
-    formData.append('image', image);
-    formData.append('id_file', id_file);
-    formData.append('text', text);
-    formData.append('session_number', session_number);
 
-    return this.http.post<ChatbotImageResponse>(
-      `${this.baseUrl}/chatbotwithImage`,
-      formData
-    );
-  }
   // Upload File
   uploadFile(baseUrl: string, file: File, additionalData?: Record<string, any>): Observable<any> {
     const formData = new FormData();

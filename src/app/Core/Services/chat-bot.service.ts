@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EditReportRequest } from '../Models/report/edit-report.model';
@@ -11,7 +11,7 @@ import { ChatbotImageResponse } from '../Models/chatbot/chatbot.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ReportHistoryService {
+export class ChatbotService {
   private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}

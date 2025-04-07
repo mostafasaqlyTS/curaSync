@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Doctor, Lab, Patient, UpdateUserRequest } from '../Models/user/user.model';
@@ -54,9 +54,7 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/UpdateUserProfile`, user);
   }
 
-  createUserReceipt(receipt: ReceiptRequest, token: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/createUserReceipt`, receipt);
-  }
+
   // using some custom logic to get the user from local storage
   private currentUser: any = null;
 
