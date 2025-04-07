@@ -1,0 +1,167 @@
+<!-- <div class="card grid grid-cols-1 md:grid-cols-2 gap-4"> -->
+<form [formGroup]="formGroup">
+  @for(field of fields; track $index){
+  <div class="form-group">
+    <div class="input-group">
+      <ng-container>
+        <p-inputgroup class="mb-3">
+          <!-- Label -->
+          @if (field.label) {
+          <label class="form-label">{{ field.label }}</label>
+          }
+
+          <!-- Icon -->
+          @if (field.icon) {
+          <p-inputgroup-addon>
+            <i class="{{ field.icon }}"></i>
+          </p-inputgroup-addon>
+          }
+
+          <!-- ✅ Enter the phone with the country -->
+          @if (field.type === 'phone') {
+          <div [formGroupName]="field.name">
+            <!-- Dropdown to select country -->
+            <p-dropdown
+              [options]="countries"
+              optionLabel="longName"
+              formControlName="country"
+              (onChange)="onCountryChange(field.name, $event)"
+              [style]="{
+                width: isSmallScreen ? '100%' : '120px',
+                'border-top-right-radius': isSmallScreen ? '' : '0px',
+                'border-bottom-right-radius': isSmallScreen ? '' : '0px',
+                'border-right': isSmallScreen ? '' : 'none'
+              }"
+            >
+              <ng-template let-country pTemplate="selectedItem">
+                <img [src]="country.flagIcon" style="width: 18px" />
+                <span>{{ country.code }}</span>
+              </ng-template>
+              <ng-template let-country pTemplate="item">
+                <img [src]="country.flagIcon" style="width: 18px" />
+                <span>{{ country.longName }}</span>
+              </ng-template>
+            </p-dropdown>
+
+            <!-- Enter phone number -->
+            <input
+              pInputText
+              formControlName="phone_number"
+              [placeholder]="field.placeholder"
+              [style]="{
+                width: isSmallScreen ? '100%' : '220px'
+              }"
+            />
+          </div>
+
+          <!-- Show error message if any -->
+          <!-- @if (isPhoneInvalid(field.name)) {
+          <div class="text-danger">أدخل رقم هاتف صحيح</div>
+          } -->
+
+          }
+
+          <!-- ✅ Password field with show/hide icon -->
+          @if (field.type === 'password') {
+          <div style="width: 100%; position: relative">
+            <span
+              (click)="togglePasswordVisibility(passwordInputRef)"
+              [ngStyle]="passwordIconStyle"
+            >
+              <i
+                class="{{
+                  passwordInputRef.type === 'password'
+                    ? 'pi pi-eye-slash'
+                    : 'pi pi-eye'
+                }}"
+              ></i>
+            </span>
+
+            <input
+              class="w-100"
+              #passwordInputRef
+              pInputText
+              [type]="field.type"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder"
+            />
+          </div>
+
+          }
+
+          <!-- Text Input -->
+          @if (field.type === 'text') {
+          <input
+            pInputText
+            [formControlName]="field.name"
+            [placeholder]="placeholderMapping[field.name] || field.placeholder"
+          />
+          }
+
+          <!-- Number Input -->
+          @if (field.type === 'number') {
+          <p-inputnumber
+            [formControlName]="field.name"
+            [placeholder]="placeholderMapping[field.name] || field.placeholder"
+          >
+          </p-inputnumber>
+          }
+
+          <!-- Select (Dropdown) -->
+          @if (field.type === 'select') {
+          <p-dropdown
+            [formControlName]="field.name"
+            [options]="field.options"
+            optionLabel="name"
+            [placeholder]="placeholderMapping[field.name] || field.placeholder"
+          >
+          </p-dropdown>
+          }
+
+          <!-- Textarea Input -->
+          @if (field.type === 'textarea') {
+          <textarea
+            pTextarea
+            [rows]="field.rows"
+            [cols]="field.cols"
+            [formControlName]="field.name"
+            [placeholder]="placeholderMapping[field.name] || field.placeholder"
+          >
+          </textarea>
+          }
+        </p-inputgroup>
+      </ng-container>
+    </div>
+  </div>
+  }
+</form>
+
+<!-- </div> -->
+
+<!-- <form [formGroup]="myForm">
+  <app-formGroup [formGroup]="myForm" [fields]="formFields"></app-formGroup>
+</form> -->
+
+<!-- myForm = new FormGroup({
+  username: new FormControl(''),
+  price: new FormControl(null),
+  website: new FormControl(''),
+  city: new FormControl(null)
+});
+
+formFields: IFormField[] = [
+  { type: 'text', name: 'username', placeholder: 'Username', icon: 'pi pi-user' },
+  { type: 'number', name: 'price', placeholder: 'Price' },
+  { type: 'text', name: 'website', placeholder: 'Website', icon: 'pi pi-globe' },
+  {
+    type: 'select',
+    name: 'city',
+    placeholder: 'Select City',
+    icon: 'pi pi-map',
+    options: [
+      { name: 'New York', value: 'ny' },
+      { name: 'Los Angeles', value: 'la' },
+      { name: 'Chicago', value: 'ch' }
+    ]
+  }
+]; -->

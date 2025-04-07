@@ -1,0 +1,29 @@
+<section class=" pb-4 h-100">
+  <div class="heading">
+    <h2 class="text-capitalize text-center">{{ 'about us' | translate }}</h2>
+  </div>
+  <div >
+    @for(item of listOfContentAboutUs(); track $index){
+    <div class="container">
+      <div
+        class="row row-gap-2 d-flex justify-content-between align-items-center my-5 py-3"
+        [ngStyle]="{ 'flex-direction': $index % 2 === 0 ? 'row-reverse' : 'row' }"
+      >
+        <div class="col-md-5">
+          <div class="about-us-image" data-aos="flip-right">
+            <img [src]="item.image" class="w-100 rounded" alt="{{ item.title | translate }}" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="about-cap" data-aos="flip-left">
+            <h2 class="text-capitalize ">{{ item.title | translate }}</h2>
+            <p >
+              {{ item.description | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+  </div>
+</section>

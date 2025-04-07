@@ -1,0 +1,53 @@
+/* General Section Styling */
+section {
+  padding: 2rem 0;
+}
+
+.heading h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.aboutUs-heading h2 {
+    font-size: 4rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 800;
+    letter-spacing: 10px;
+    color: var(--gray-400)
+}
+
+.about-us-image {
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
+    transition: 1s;
+}
+
+.about-us-image img {
+  border-radius: 8px;
+}
+
+.about-cap h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-cap p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,10 @@
+:host ::ng-deep .p-button-label {
+  /* color: #ffd34f !important;  */
+  transition: color 0.3s ease-in-out;
+}
+
+:host ::ng-deep .p-button-icon {
+  /* color: #ffd34f !important;  */
+  transition: color 0.3s ease-in-out;
+}
+

@@ -1,0 +1,35 @@
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search..."
+    class="search-input"
+    aria-label="Search input"
+  />
+  <button
+    (click)="onSearch()"
+    class="search-button"
+    [disabled]="!searchQuery.trim()"
+    aria-label="Search button"
+  >
+    Search
+  </button>
+</div>
+
+<!-- how to use it -->
+<!-- <h2>Reusable Search Component</h2>
+<app-search (searchEvent)="handleSearch($event)"></app-search>
+
+@if(searchResult){
+<div>
+  <p>{{ searchResult }}</p>
+</div>
+} -->
+
+
+<!-- searchResult: string = '';
+
+  handleSearch(query: string) {
+    console.log('Search Query:', query);
+    this.searchResult = `Results for: ${query}`;
+  } -->

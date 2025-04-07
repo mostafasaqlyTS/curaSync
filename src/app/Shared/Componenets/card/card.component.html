@@ -1,0 +1,55 @@
+<div class="card-container">
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template pTemplate="header">
+      <img [src]="imageUrl" alt="Card Image" class="w-full" />
+    </ng-template>
+
+    <ng-template pTemplate="title">
+      <span>{{ title }}</span>
+    </ng-template>
+
+    <ng-template pTemplate="subtitle">
+      <span>{{ subtitle }}</span>
+    </ng-template>
+
+    <p>
+      {{ content }}
+    </p>
+    @if (showFooter) {
+    <ng-template pTemplate="footer">
+      <div class="flex gap-4 mt-1">
+        <p-button [label]="cancelLabel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full"
+          (onClick)="handleCancel()">
+        </p-button>
+
+        <p-button [label]="saveLabel" class="w-full" styleClass="w-full" (onClick)="handleSave()">
+        </p-button>
+      </div>
+    </ng-template>
+  }
+  </p-card>
+</div>
+
+
+
+<!-- <app-card
+  title="Product Details"
+  subtitle="Limited Offer"
+  content="This is an amazing product with great features."
+  imageUrl="https://fakeimg.pl/250x100/"
+  cancelLabel="Back"
+  saveLabel="Buy Now"
+  (onCancel)="handleCancel()"
+  (onSave)="handleSave()">
+</app-card> -->
+
+
+<!-- handleCancel() {
+  console.log('Cancel button clicked!');
+  alert('Cancel button was clicked!');
+}
+
+handleSave() {
+  console.log('Save button clicked!');
+  alert('Save button was clicked!');
+} -->

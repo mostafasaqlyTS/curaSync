@@ -1,0 +1,37 @@
+.itemIcon {
+    height: 6.25rem;
+    width: 6.25rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 0 0 10px var(--secondary-color);
+    margin-bottom: 1rem;
+    transition: all 1s;
+}
+
+.itemIcon i {
+    font-size: calc(40px / 1rem);
+}
+
+.item:hover .itemIcon {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    box-shadow: 0 0 0 10px var(--yellow-50);
+}
+
+.item {
+    transition: all 1.5s;
+
+    overflow: hidden;
+}
+
+.item:hover {
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.text-warn {
+  color: #ff9800; /* Adjust the color code as needed for the warn color */
+  font-size: 2.5rem; /* Adjust the size as needed */
+}

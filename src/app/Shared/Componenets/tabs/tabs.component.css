@@ -1,0 +1,19 @@
+.card {
+  padding: 10px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+/* Style for the tab links */
+.tab-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.tab-link:hover {
+  text-decoration: underline;
+  color: #007bff; /* Example hover color */
+}

@@ -1,0 +1,21 @@
+@if(isLoading)
+{
+  <div class="loader-overlay">
+    <i class="pi pi-spin pi-spinner" [style]="{ fontSize: size, color: color }"></i>
+    <p>{{ message }}</p>
+  </div>
+}
+
+
+
+<!-- <app-loader [isLoading]="isLoading" message="Fetching Data..." size="3rem" color="yellow"></app-loader>
+<app-button pButton label="Load Data" (click)="fetchData()"></app-button> -->
+
+<!-- isLoading = false;
+
+  fetchData() {
+    this.isLoading = true; // Show loader
+    setTimeout(() => {
+      this.isLoading = false; // Hide loader after 3 seconds
+    }, 3000);
+  } -->

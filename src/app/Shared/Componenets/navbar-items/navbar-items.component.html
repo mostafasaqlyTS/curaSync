@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <span class="logo">CuraSync</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      @if (isLoggedIn()) {
+        <div class="d-flex flex-wrap justify-content-center align-items-center flex-md-row flex-column gap-2">
+          <app-button icon="pi pi-user" [label]="'profile' | translate" routerLink="" variant="text"></app-button>
+          <app-button icon="pi pi-pencil" [label]="'edit profile' | translate" routerLink="" variant="text"></app-button>
+          <app-button icon="pi pi-info-circle" [label]="'about us' | translate" routerLink="about-us" variant="text"></app-button>
+          <app-button icon="pi pi-briefcase" [label]="'services' | translate" routerLink="services" variant="text"></app-button>
+          <app-button icon="pi pi-envelope" [label]="'contact' | translate" routerLink="contact" variant="text"></app-button>
+          <app-button icon="pi pi-sign-out" [label]="'Log Out' | translate" (click)="logOut()" variant="text"></app-button>
+        </div>
+      } @else {
+        <div class="d-flex flex-wrap justify-content-center align-items-center flex-md-row flex-column gap-2">
+          <app-button icon="pi pi-sign-in" [label]="'Login' | translate" routerLink="login" variant="text"></app-button>
+          <app-button icon="pi pi-user-plus" [label]="'Sign Up' | translate" routerLink="register" variant="text"></app-button>
+        </div>
+      }
+    </div>
+
+    <app-button icon="pi pi-globe" (click)="switchLanguage()" variant="text"
+      [label]="translationService.currentLanguageValue === 'en' ? ('العربية' | translate) : ('English' | translate)">
+    </app-button>
+  </div>
+</nav>

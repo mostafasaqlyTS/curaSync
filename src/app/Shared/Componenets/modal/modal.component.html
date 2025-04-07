@@ -1,0 +1,46 @@
+@if(visible){
+<div class="backdrop" ></div>
+}
+<p-dialog
+  [(visible)]="visible"
+  [header]="header"
+  [style]="{width: width, height: height}"
+  [modal]="modal"
+  [closeOnEscape]="closeOnEscape"
+  (onHide)="closeModal()">
+
+  <ng-content>
+    @if(image){
+      <img [src]="image.src" [alt]="image.alt" />
+  }
+  </ng-content> <!-- Allow content projection -->
+
+  <p-footer>
+    <app-button
+      label="{{cancelLabel}}"
+      (onClick)="closeModal()">
+    </app-button>
+    <app-button
+      label="{{confirmLabel}}"
+      (onClick)="confirmAction()">
+    </app-button>
+  </p-footer>
+</p-dialog>
+
+<!-- <p>Modal</p> -->
+<!-- How to use it, Note showModal:boolean variable -->
+<!-- <app-modal
+[visible]="showModal"
+header="Are you sure?"
+[width]="'40vw'"
+[height]="'30vh'"
+(onClose)="showModal = false"
+(onConfirm)="confirmAction()"
+confirmLabel="Confirm"
+cancelLabel="Cancel"
+>
+<p>Do you really want to proceed with this action?</p>
+</app-modal>
+
+<app-button  label="Open Modal" icon="pi pi-check"
+iconPos="left" (click)="showModal = true">Open</app-button> -->

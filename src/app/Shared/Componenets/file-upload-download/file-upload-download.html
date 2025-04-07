@@ -1,0 +1,6 @@
+<div>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button (click)="uploadFile('https://your-api-endpoint.com/api/files')">Upload</button>
+  <button (click)="downloadFile('https://your-api-endpoint.com/api/files', 'example.txt')">Download Example File</button>
+  <button (click)="getFileList('https://your-api-endpoint.com/api/files')">Get File List</button>
+</div>

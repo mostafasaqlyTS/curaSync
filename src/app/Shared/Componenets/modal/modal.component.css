@@ -1,0 +1,10 @@
+/* Ensure consistent spacing and alignment */
+:host ::ng-deep .p-dialog {
+  border-radius: 8px;
+}
+
+:host ::ng-deep .p-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
