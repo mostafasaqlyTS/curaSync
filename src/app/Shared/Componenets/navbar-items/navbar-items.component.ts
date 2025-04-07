@@ -1,16 +1,16 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonComponent } from "../button/button.component"; // Import TranslationService
 import { MenuItem } from 'primeng/api';
 import {UserService} from '../../../Core/Services/user.service';
 import { LanguageService } from '../../../Core/Services/langugue.service';
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-navbar-items',
   standalone: true,
-  imports: [RouterModule, TranslateModule, ButtonModule,
+  imports: [RouterModule, ButtonModule, TranslatePipe,
     MenubarModule, ButtonComponent],
   templateUrl: './navbar-items.component.html',
   styleUrls: ['./navbar-items.component.css'],
