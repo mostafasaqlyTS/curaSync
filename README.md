@@ -57,3 +57,26 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+# MD-FrontEnd-April2025
+
+## Overview
+
+MD-FrontEnd-April2025 is a front-end Angular application designed to address challenges in the medical sector. It focuses on providing advanced solutions for healthcare management, patient care, and laboratory services.
+
+## Features
+
+- **Multi-language Support**: Includes translations for English and Arabic using `@ngx-translate`.
+- **Responsive Design**: Built with Bootstrap and PrimeNG for a seamless user experience across devices.
+- **Dynamic Components**:
+  - Custom components like buttons, cards, tables, and tabs.
+  - Reusable navbar and notification icons.
+- **Healthcare Modules**:
+  - Patient registration and profile management.
+  - Smart medical services integration.
+- **File Management**:
+  - Upload, download, and search files with notifications.
+
+## Project Structure
