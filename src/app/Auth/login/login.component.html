@@ -1,0 +1,55 @@
+<section>
+  <div class="container">
+    <div class="w-100 d-flex justify-content-center align-items-center">
+      <div class="rounded p-3 shadow row mx-5">
+        <div class="col-md-6 p-md-3">
+          <div class="image w-100">
+            <img
+              src="assets/undraw_my-password_iyga.svg"
+              alt=" image"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div
+          class="col-md-6 rounded d-flex align-items-center justify-content-center"
+        >
+          <div
+            class="d-flex flex-column justify-content-center align-items-center gap-4"
+          >
+            <!-- title -->
+            <h5 class="display-4 text-uppercase fw-bold" >
+              {{ "Login" | translate }}
+            </h5>
+
+            <app-formGroup
+              *ngIf="myForm"
+              [formGroup]="myForm"
+              [fields]="(formFields$ | async) || []"
+            ></app-formGroup>
+
+            <app-button
+            *ngIf="myForm"
+              [disabled]="myForm.invalid"
+              type="submit"
+              [ngClass]="{
+                    'btn-primary': myForm.valid,
+                    'btn-secondary': myForm.invalid,
+                }"
+              [label]="translate.instant('login')"
+              (click)="submitLogin()"
+            >
+            </app-button>
+
+            <small class="text-capitalize"
+              >{{ "don't have account" | translate }}
+              <a routerLink="/register" class="fw-bold text-decoration-none" style="color: var(--color-primary); cursor: pointer;">
+                {{ "Sign Up" | translate }}
+              </a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

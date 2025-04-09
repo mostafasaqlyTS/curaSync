@@ -19,10 +19,10 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TextareaModule } from 'primeng/textarea';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { HttpClient } from '@angular/common/http';
-import { countries } from '../../../../../../MD-FrontEndNew/src/app/Core/Models/countries.model';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { countries } from '../../../Core/Models/auth/login.model';
 
 export interface IFormField {
   type: 'text' | 'number' | 'select' | 'textarea' | 'password' | 'phone';

@@ -1,0 +1,19 @@
+<section class="d-flex flex-column  justify-content-center align-items-centers p-2">
+  <h2 class="title">{{ "roles" | translate }}</h2>
+  <p class="pDescripation">
+    {{ "choose your role to complete register" | translate }}
+  </p>
+
+  <div class="p-grid p-mt-5">
+    @for(item of listOfContentRegister(); track $index){
+    <div class="p-col-12 p-md-5" routerLink="{{item.router}}">
+      <app-card
+        title="{{ item.title | translate }}"
+        description="{{ item.description | translate }}"
+        iconClass="{{ item.icon }}"
+        [cardStyle]="{ 'width': '400px' }"
+      ></app-card>
+    </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<div class="d-flex flex-column justify-content-center align-items-center gap-4">
+  <!-- title -->
+  <h5 class="display-4 text-uppercase fw-bold">
+    {{ translate.instant("Sign Up") }}
+  </h5>
+
+  <app-formGroup
+    *ngIf="myForm"
+    [formGroup]="myForm"
+    [fields]="(formFields$ | async) || []"
+  ></app-formGroup>
+
+  <app-button
+    *ngIf="myForm"
+    [disabled]="myForm.invalid"
+    type="submit"
+    [ngClass]="{
+        'btn-primary': myForm.valid,
+        'btn-secondary': myForm.invalid,
+    }"
+    [label]="translate.instant('Sign Up')"
+    (click)="submitLogin()"
+  >
+  </app-button>
+
+</div>

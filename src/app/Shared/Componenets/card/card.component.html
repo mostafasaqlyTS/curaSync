@@ -1,4 +1,21 @@
-<div class="card-container">
+<p-card class="fade-in-up" [style]="cardStyle">
+  <div class="card-content text-center">
+    <i  [ngClass]="iconClass" [style]="iconStyle"></i>
+    <h3 class="pt-3">{{ title }}</h3>
+    <p>{{ description }}</p>
+  </div>
+</p-card>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card-container">
   <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
     <ng-template pTemplate="header">
       <img [src]="imageUrl" alt="Card Image" class="w-full" />
@@ -28,7 +45,7 @@
     </ng-template>
   }
   </p-card>
-</div>
+</div> -->
 
 
 

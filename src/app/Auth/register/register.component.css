@@ -1,0 +1,71 @@
+
+@keyframes fadeInUpH2 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  animation: fadeInUpH2 1s ease-out;
+}
+
+/* Animation for p */
+@keyframes fadeInUpP {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pDescripation {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInUpP 1s ease-out;
+}
+
+
+
+.p-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .p-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .p-col-12 {
+    width: 100% !important;
+  }
+
+  .p-md-5 {
+    .p-md-5 {
+      width: 90% !important;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

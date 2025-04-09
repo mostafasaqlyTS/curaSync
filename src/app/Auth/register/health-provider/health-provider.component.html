@@ -1,0 +1,16 @@
+<section class="d-flex flex-column  justify-content-center align-items-centers p-2">
+    <h2 class="title">{{ "healthProvider.health providers roles" | translate }}</h2>
+    <div class="p-grid p-mt-5">
+      @for(item of listOfContentHealthProvider(); track $index){
+      <div class="p-col-12 p-md-4 mt-5" routerLink="{{item.router}}">
+        <app-card
+          title="{{ item.title | translate }}"
+          description="{{'healthProvider.register' | translate }} {{ item.title | translate }}"
+          [iconClass]="item.icon"
+          [cardStyle]="{ 'width': '240px' }"
+        ></app-card>
+      </div>
+      }
+    </div>
+  </section>
+  
